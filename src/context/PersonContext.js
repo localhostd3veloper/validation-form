@@ -1,7 +1,8 @@
-import React, { createContext, useContext, useEffect } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "../components/HomePage";
 import Forms from "../components/Forms";
+import axios from "axios";
 
 export const PersonContext = createContext();
 
@@ -10,12 +11,25 @@ export function usePerson() {
 }
 
 export const MainApp = () => {
+  const [countries, setCountries] = useState([]);
   useEffect(() => {
-    async function fetchData() {}
+    async function fetchData() {
+      await axios
+        .get(
+          "http://cdn.jsdelivr.net/gh/stefanbinder/countries-states/countries.json"
+        )
+        .then((data) => {
+          setCountries(data.data);
+        });
+    }
     fetchData();
   }, []);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    window.addEventListener("message", (e) => {
+      console.log(e);
+    });
+  }, []);
 
   const value = {};
 
