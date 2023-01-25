@@ -9,7 +9,7 @@ export function usePerson() {
   return useContext(PersonContext);
 }
 
-export const TicketProvider = () => {
+export const MainApp = () => {
   useEffect(() => {
     async function fetchData() {}
     fetchData();
