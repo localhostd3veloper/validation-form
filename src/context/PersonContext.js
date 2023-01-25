@@ -24,7 +24,7 @@ export const TicketProvider = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/checkout" element={<Forms />} />
+          <Route path="/forms" element={<Forms />} />
         </Routes>
       </BrowserRouter>
     </PersonContext.Provider>
