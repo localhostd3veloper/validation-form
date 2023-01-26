@@ -8,61 +8,45 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <form class="form-body">
+    <form id="form" class="form-body" onsubmit="formSubmit(event)">
       <span style="font-weight: 600"
         >Can You Please Provide Your Personal Details?</span
       >
       <div class="form-item">
         <label for="name">Name</label>
-        <input
-          type="text"
-          placeholder="Enter Name..."
-          minlength="4"
-          maxlength="10"
-          required
-          name="name"
-          id="name"
-        />
+        <input type="text" placeholder="Enter Name..." name="name" id="name" />
       </div>
       <div class="form-item">
         <label for="dob">Date of Birth</label>
-        <input type="date" required name="dob" id="dob" />
+        <input type="date" name="dob" id="dob" />
       </div>
       <div class="form-item">
-        <label for="email">Contact Number</label>
+        <label for="tel">Contact Number</label>
         <input
-          required
           type="tel"
-          placeholder="10 Digit Only"
-          minlength="10"
-          maxlength="10"
+          placeholder="10 Digits Only"
           name="tel"
           id="tel"
         />
       </div>
       <div class="form-item">
         <label for="country">Country</label>
-        <select oninput="getState()" required name="country" id="country">
-          <option disabled selected value>-- select an country --</option>
+        <select oninput="getState()" name="country" id="country">
+          <option disabled selected value>-- select country --</option>
         </select>
       </div>
       <div class="form-item">
         <label for="state">State</label>
-        <select required name="state" id="state">
+        <select name="state" id="state">
           <option disabled selected value>-- select state --</option>
         </select>
       </div>
       <div class="form-item">
         <label for="email">Your Email</label>
-        <input
-          required
-          type="email"
-          placeholder="user@mail"
-          name="email"
-          id="email"
-        />
+        <input type="email" placeholder="user@mail" name="email" id="email" />
       </div>
-      <button required type="submit" class="submit-btn">Submit</button>
+      <div id="error"></div>
+      <button type="submit" class="submit-btn">Submit</button>
     </form>
     <script src="form-script.js"></script>
   </body>
