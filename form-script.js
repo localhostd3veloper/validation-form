@@ -4,7 +4,7 @@ window.onload = function () {
   // the URL you have provided was of github raw file and it was not working,
   // so I have changed it to jsdelivr
   const res = fetch(
-    "http://cdn.jsdelivr.net/gh/stefanbinder/countries-states/countries.json"
+    "https://cdn.jsdelivr.net/gh/stefanbinder/countries-states/countries.json"
   );
   res.then((data) => {
     data.json().then((data) => {
